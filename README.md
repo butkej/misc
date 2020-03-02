@@ -5,9 +5,9 @@ This repo contains misc. *helper functions* I use in different **Machine Learnin
 ## Usage
 Usage is normally by appending the module location to sys.path and then importing, eg. :
 
-'''
+`
 import sys
 sys.path.append('/bph/puredata1/bioinfdata/user/butjos/work/code/misc')
 
 import misc
-'''
+`
