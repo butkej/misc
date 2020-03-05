@@ -190,6 +190,23 @@ def get_run_logdir(root_logdir):
 
 ###
 
+def exponential_decay(lr0, s):
+    ''' Exponential decaying learning rate scheduler for neural networks.
+
+    Call with
+        exponential_decay_fn = exponential_decay(lr0=0.01, s=20)
+
+    Pass to callback
+        lr_scheduler = keras.callbacks.LearningRateScheduler(exponential_decay_fn)
+        history = model.fit(..., callbacks=[lr_scheduler,...])
+
+    '''
+    def exponential_decay_fn(epoch):
+        return lr0 * 0.1 ** (epoch / s)
+    return exponential_decay_fn
+
+###
+
 # Multiple Instance Learning (MIL) related helper functions below this line
 ########################################################################### 
 
