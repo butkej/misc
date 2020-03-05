@@ -1,6 +1,6 @@
 # Miscellaneous
 
-This repo contains misc. *helper functions* I use in different **Machine Learningi** and **Deep Learning** projects. Some might work, others might not...
+This repo contains misc. *helper functions* I use in different **Machine Learning** and **Deep Learning** projects. Some might work, others might not...
 
 ## Usage
 Usage is normally by appending the module location to sys.path and then importing, eg. :  
