@@ -20,6 +20,8 @@ import pandas as pd
 import tensorflow as tf
 from tensorflow import keras
 
+K = keras.backend 
+
 # FUNCTION DEFINITONS
 #####################
 
@@ -223,9 +225,9 @@ def bag_accuracy(y_true, y_pred):
     # Returns
         acc : Tensor (1 x 1) accuracy of bag label prediction.
     ''' 
-    y_true = keras.backend.mean(y_true, axis=0, keepdims=False)
-    y_pred = keras.backend.mean(y_pred, axis=0, keepdims=False)
-    acc = keras.backend.mean(keras.backend.equal(y_true, keras.backend.round(y_pred)))
+    y_true = K.mean(y_true, axis=0, keepdims=False)
+    y_pred = K.mean(y_pred, axis=0, keepdims=False)
+    acc = K.mean(K.equal(y_true, K.round(y_pred)))
     return acc
 
 ###
@@ -241,8 +243,8 @@ def bag_binary_loss(y_true, y_pred):
     # Returns
         acc : Tensor (1 x 1) Binary Crossentropy loss of predicting bag label.
     ''' 
-    y_true = keras.backend.mean(y_true, axis=0, keepdims=False)
-    y_pred = keras.backend.mean(y_pred, axis=0, keepdims=False)
-    loss = keras.backend.mean(keras.backend.binary_crossentropy(y_true, y_pred), axis=-1)
+    y_true = K.mean(y_true, axis=0, keepdims=False)
+    y_pred = K.mean(y_pred, axis=0, keepdims=False)
+    loss = K.mean(K.binary_crossentropy(y_true, y_pred), axis=-1)
     return loss
 
