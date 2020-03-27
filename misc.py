@@ -209,6 +209,13 @@ def exponential_decay(lr0, s):
 
 ###
 
+def train_test_split_sk(X, y, test_size=0.33, random_state=42):
+    ''' Split input data input train and test set with the default sklearn method.
+    '''
+    from sklearn.model_selection import train_test_split
+    return (X_train, X_test), (y_train, y_test) = train_test_split(X, y, test_size, random_state)
+
+
 # Multiple Instance Learning (MIL) related helper functions below this line
 ########################################################################### 
 
