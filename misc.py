@@ -168,7 +168,7 @@ def plot_keras_metrics(hist_object, savepath):
     '''
     pd.DataFrame(hist_object.history).plot(figsize=(8, 5))
     plt.grid(True)
-    plt.gca().set_y_lim(0, 1) # sets the vertical range to [0-1]
+    plt.gca().set_ylim(0, 1) # sets the vertical range to [0-1]
     plt.savefig(str(savepath), dpi=600)
     #plt.show()
 
